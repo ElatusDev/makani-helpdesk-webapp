@@ -1,0 +1,49 @@
+{
+    "folders": [
+        {
+            "path": "./"
+        }
+    ],
+    "settings": {
+        "editor.formatOnSave": true,
+        "files.exclude": {
+            "node_modules": true,
+            "dist": true
+        },
+        "typescript.tsdk": "node_modules/typescript/lib"
+    },
+    "extensions": {
+        "recommendations": [
+            "dbaeumer.vscode-eslint",
+            "esbenp.prettier-vscode",
+            "ms-vscode.vscode-typescript-tslint-plugin",
+            "msjsdiag.debugger-for-chrome"
+        ]
+    },
+    "tasks": {
+        "version": "2.0.0",
+        "tasks": [
+            {
+                "label": "Build",
+                "type": "npm",
+                "script": "build",
+                "group": "build",
+                "problemMatcher": ["$tsc"]
+            },
+            {
+                "label": "Start",
+                "type": "npm",
+                "script": "start",
+                "isBackground": true,
+                "problemMatcher": ["$tsc-watch"]
+            },
+            {
+                "label": "Test",
+                "type": "npm",
+                "script": "test",
+                "group": "test",
+                "problemMatcher": ["$tsc"]
+            }
+        ]
+    }
+}
