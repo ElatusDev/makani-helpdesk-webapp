@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 // webpack.config.js
 
 import path from 'path';
@@ -97,4 +98,48 @@ export default async () => { // <--- CRITICAL CHANGE: async default export
       open: true,
     },
   };
+=======
+const path = require('path');
+
+module.exports = {
+  mode: 'development',
+  devtool: 'source-map',
+  entry: './src/app/index.tsx', 
+  output: {
+    path: path.resolve(__dirname, 'dist'),
+    filename: 'bundle.js',
+  },
+  devtool: 'inline-source-map', 
+  resolve: {
+    extensions: ['.tsx', '.ts', '.js'], 
+  },
+  module: {
+    rules: [
+      {
+          test: /\.(ts|tsx)$/, 
+          exclude: /node_modules/,
+          use: [
+              { 
+                  loader: 'babel-loader',
+                  options: {
+                    presets: ['@babel/preset-env', '@babel/preset-react'], 
+                  },
+              },
+              {
+                loader: 'ts-loader',
+              }
+          ],
+      },
+      {
+        test: /\.css$/,
+        use: ['style-loader', 'css-loader'],
+      },
+    ],
+  },
+  devServer: {
+    static: path.join(__dirname, 'dist'),
+    hot: true,
+    port: 3000
+  }
+>>>>>>> ddd6628 (initialize project structure with React, Redux, and MUI; add Docker support and basic configurations)
 };

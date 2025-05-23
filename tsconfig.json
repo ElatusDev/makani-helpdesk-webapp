@@ -1,0 +1,22 @@
+{
+    "compilerOptions": {
+      "target": "ESNext", 
+      "module": "ESNext",
+      "moduleResolution": "node",
+      "jsx": "react-jsx",
+      "allowJs": false, 
+      "noImplicitAny": true, 
+      "strict": true, 
+      "esModuleInterop": true, 
+      "resolveJsonModule": true, 
+      "isolatedModules": true, 
+      "forceConsistentCasingInFileNames": true,
+      "noEmit": false,
+    },
+    "baseUrl": "./",
+    "paths": {
+      "@/*": ["src/*"]
+    },
+    "include": ["src"], 
+    "exclude": ["node_modules", "dist"] 
+  }
